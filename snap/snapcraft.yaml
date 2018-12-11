@@ -1,0 +1,24 @@
+name: cookiecutter
+base: core18
+version: 'git'
+summary: A command-line utility that creates projects from project templates
+description: |
+  A command-line utility that creates projects from cookiecutters (project
+  templates), e.g. creating a Python package project from a Python package
+  project template.
+
+grade: stable
+confinement: strict
+
+parts:
+  cookiecutter:
+    plugin: python
+    source: .
+
+apps:
+  cookiecutter:
+    command: bin/cookiecutter
+    environment:
+      LC_ALL: C.UTF-8
+    plugs:
+      - home
